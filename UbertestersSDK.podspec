@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
 
   s.source       = {:git => "https://github.com/vavaka/UbertestersSDK.git", :tag => "2.0.2"}
 
+  s.source_files = "UbertestersSDK.framework/Versions/A/Headers/*.h"
   s.vendored_frameworks = "UbertestersSDK.framework"
 
   s.frameworks = "AdSupport", "QuartzCore", "CoreImage", "SystemConfiguration", "CoreTelephony", "CoreLocation", "AudioToolbox", "OpenGLES", "CoreMotion"
