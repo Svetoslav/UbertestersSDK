@@ -14,7 +14,6 @@
 		E197E9E91A09E59E0035C651 /* libUbertestersSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E197E9D11A09E59E0035C651 /* libUbertestersSDK.a */; };
 		E197E9EF1A09E59E0035C651 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E197E9ED1A09E59E0035C651 /* InfoPlist.strings */; };
 		E197E9F11A09E59E0035C651 /* UbertestersSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E197E9F01A09E59E0035C651 /* UbertestersSDKTests.m */; };
-		E197E9FB1A09E5DF0035C651 /* UbertestersSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E197E9FA1A09E5DF0035C651 /* UbertestersSDK.framework */; };
 		E197E9FD1A09E5EB0035C651 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E197E9FC1A09E5EB0035C651 /* CoreMotion.framework */; };
 		E197E9FF1A09E5F00035C651 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E197E9FE1A09E5F00035C651 /* OpenGLES.framework */; };
 		E197EA011A09E5F80035C651 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E197EA001A09E5F80035C651 /* AudioToolbox.framework */; };
@@ -24,6 +23,7 @@
 		E197EA091A09E61A0035C651 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E197EA081A09E61A0035C651 /* CoreImage.framework */; };
 		E197EA0B1A09E6210035C651 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E197EA0A1A09E6210035C651 /* QuartzCore.framework */; };
 		E197EA0D1A09E6280035C651 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E197EA0C1A09E6280035C651 /* AdSupport.framework */; };
+		E197EA111A09F4770035C651 /* UbertestersSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E197EA101A09F4770035C651 /* UbertestersSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +68,7 @@
 		E197EA081A09E61A0035C651 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		E197EA0A1A09E6210035C651 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E197EA0C1A09E6280035C651 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		E197EA101A09F4770035C651 /* UbertestersSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UbertestersSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 			files = (
 				E197EA0D1A09E6280035C651 /* AdSupport.framework in Frameworks */,
 				E197EA0B1A09E6210035C651 /* QuartzCore.framework in Frameworks */,
+				E197EA111A09F4770035C651 /* UbertestersSDK.framework in Frameworks */,
 				E197EA091A09E61A0035C651 /* CoreImage.framework in Frameworks */,
 				E197EA071A09E6120035C651 /* SystemConfiguration.framework in Frameworks */,
 				E197EA051A09E6070035C651 /* CoreTelephony.framework in Frameworks */,
@@ -84,7 +86,6 @@
 				E197EA011A09E5F80035C651 /* AudioToolbox.framework in Frameworks */,
 				E197E9FF1A09E5F00035C651 /* OpenGLES.framework in Frameworks */,
 				E197E9FD1A09E5EB0035C651 /* CoreMotion.framework in Frameworks */,
-				E197E9FB1A09E5DF0035C651 /* UbertestersSDK.framework in Frameworks */,
 				E197E9D51A09E59E0035C651 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +107,7 @@
 		E197E9C81A09E59E0035C651 = {
 			isa = PBXGroup;
 			children = (
+				E197EA101A09F4770035C651 /* UbertestersSDK.framework */,
 				E197E9D61A09E59E0035C651 /* UbertestersSDK */,
 				E197E9EA1A09E59E0035C651 /* UbertestersSDKTests */,
 				E197E9D31A09E59E0035C651 /* Frameworks */,
@@ -365,6 +367,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UbertestersSDK",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UbertestersSDK/UbertestersSDK-Prefix.pch";
@@ -381,6 +384,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UbertestersSDK",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UbertestersSDK/UbertestersSDK-Prefix.pch";
