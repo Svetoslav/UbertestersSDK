@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.source_files = "UbertestersSDK.framework/Versions/A/Headers/*.h"
 
-  s.vendored_frameworks = "UbertestersSDK"
+  s.vendored_frameworks = "UbertestersSDK.framework"
 
   s.frameworks = "AdSupport", "QuartzCore", "CoreImage", "SystemConfiguration", "CoreTelephony", "CoreLocation", "AudioToolbox", "OpenGLES", "CoreMotion"
 
