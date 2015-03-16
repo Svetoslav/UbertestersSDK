@@ -173,6 +173,9 @@ typedef enum
 - (void)playSystemSound:(int)soundID;
 - (void)enableTimer:(BOOL)res;
 
+// For Xamarin
+- (void)sendCrash:(NSString*) crashDescription;
+
 @end
 
 /*!Handle Exception*/

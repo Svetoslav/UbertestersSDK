@@ -1,15 +1,15 @@
 Pod::Spec.new do |s|
-  s.name         = "UbertestersSDK"
-  s.version      = "2.0.2"
+  s.name         = "Ubertesters"
+  s.version      = "2.0.3"
   s.summary      = "Mobile beta testing solution"
-  s.homepage     = "http://github.com/vavaka/UbertestersSDK"
+  s.homepage     = "https://github.com/sciutand/UbertestersSDK"
 
   s.license      = {:type => 'MIT', :file => 'LICENSE'}
-  s.author       = {"Vladimir Kuznetsov" => "vavaka.work@gmail.com"}
+  s.author       = {"Andrea Sciutto" => "sciutand@gmail.com"}
 
   s.platform     = :ios, "6.0"
 
-  s.source       = {:git => "https://github.com/vavaka/UbertestersSDK.git", :tag => "2.0.2"}
+  s.source       = {:git => "https://github.com/sciutand/UbertestersSDK.git", :tag => "2.0.3"}
 
   s.source_files = "UbertestersSDK.framework/Versions/A/Headers/*.h"
   s.vendored_frameworks = "UbertestersSDK.framework"
