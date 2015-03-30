@@ -5,3 +5,7 @@ tool that allows mobile development businesses to manage all of
 their beta testing resources in a single environment.
 
 http://ubertesters.com
+
+```
+pod 'Ubertesters'
+```
