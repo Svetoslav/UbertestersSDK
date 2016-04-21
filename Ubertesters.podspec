@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = "UbertestersSDK.framework"
   s.preserve_paths = "*.framework"
 
-  s.frameworks = "AdSupport", "QuartzCore", "CoreImage", "SystemConfiguration", "CoreTelephony", "CoreLocation", "AudioToolbox", "OpenGLES", "CoreMotion"
+  s.frameworks = "AdSupport", "QuartzCore", "CoreImage", "SystemConfiguration", "CoreTelephony", "CoreLocation", "AudioToolbox", "OpenGLES", "CoreMotion", "MediaPlayer", "CoreMedia"
 
   s.requires_arc = true
 end
