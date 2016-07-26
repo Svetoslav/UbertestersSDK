@@ -184,6 +184,8 @@ typedef enum {
 // For Xamarin
 - (void)sendCrash:(NSString*)crashDescription;
 
+- (void)postFakeCrash;
+
 @end
 
 /*!Install Urban HandleEception to the app and uber menu*/
