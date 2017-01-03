@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name         = "Ubertesters"
-  s.version      = "3.0.6"
+  s.version      = "3.0.0"
   s.summary      = "Mobile beta testing solution"
   s.homepage     = "https://github.com/sciutand/UbertestersSDK"
-  s.description  = "Pod to use Ubertesters via CocoaPods. Currently using the latest version 2.0.6"
+  s.description  = "Pod to use Ubertesters via CocoaPods. Currently using the latest version 3.0.0"
   s.license      = {:type => 'MIT', :file => 'LICENSE'}
   s.author       = {"Andrea Sciutto" => "sciutand@gmail.com"}
 

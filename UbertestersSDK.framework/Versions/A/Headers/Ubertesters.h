@@ -8,49 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "ExtraDataList.h"
+#import "GlobalDefines.h"
 
 @class CustomViewUberTesters;
 @class UserProfileViewController;
-@class LockScreenViewControllerUberTesters;
 
-/*!
- * @typedef Ubertesters different mode options.
- * @brief A list of option for Ubertesters launch.
- * @code [[Ubertesters shared] 
-    initializeWithOptions:UTOptionsSlider];
- */
-typedef enum {
-    /*!Default options (Slider and UTOptionsLockingModeDisableUbertestersIfBuildNotExist).*/
-    UbertestersOptionsDefault __attribute__((deprecated)) = 0,
-    
-    /*!Option for using Slider mode.*/
-    UbertestersOptionsSlider __attribute__((deprecated(" use 'UbertestersActivationModeWidget:' instead."))) = 1 << 0,
-    UbertestersActivationModeWidget = 1 << 0,
-    
-    /*!Option for using Shake mode.*/
-    UbertestersOptionsShake __attribute__((deprecated(" use 'UbertestersActivationModeShake:' instead."))) = 1 << 1,
-    UbertestersActivationModeShake = 1 << 1,
-    
-    /*!Option for Manual mode.*/
-    UbertestersOptionsManual __attribute__((deprecated(" use 'UbertestersActivationModeManual:' instead."))) = 1 << 2,
-    UbertestersActivationModeManual = 1 << 2,
-    
-    /*!Option for Locking mode (default).*/
-    UbertestersOptionsLockingModeDisableUbertestersIfBuildNotExist __attribute__((deprecated(" use 'UbertestersLockingModeDisableUbertesters:' instead."))) = 1 << 3,
-    UbertestersLockingModeDisableUbertesters = 1 << 3,
 
-    /*!Option for Locking mode.*/
-    UbertestersOptionsLockingModeAppIfBuildNotExist __attribute__((deprecated(" use 'UbertestersLockingModeLockApplication:' instead."))) = 1 << 4,
-    UbertestersLockingModeLockApplication = 1 << 4
-} UbertestersOptions;
-
-typedef enum
-{
-    NoneLockingMode = -1,
-    LockingModeDisableUbertestersIfBuildNotExist,
-    LockingModeLockAppIfBuildNotExist,
-} LockingMode;
 
 /*!
  * @typedef UTLog options.
@@ -58,38 +21,26 @@ typedef enum
  * @code [[Ubertesters shared] UTLog:@"Some text..."
                 withLevel:UTLogLevelInfo];
  */
-typedef enum {
-    /*!Error level*/
-    UTLogLevelError,
-    /*!Warning level*/
-    UTLogLevelWarning,
-    /*!Information level*/
-    UTLogLevelInfo,
-    /*!Activity level*/
-    UTLogLevelActivity
-} UTLogLevel;
-
-@protocol UbertestersExtraDataProtocol <NSObject>
-//-(ExtraDataList *)ubertestersCrashWillPost;
-- (ExtraDataList *)ubertestersIssueWillPost;
-@end
+//typedef enum {
+//    /*!Error level*/
+//    UTLogLevelError,
+//    /*!Warning level*/
+//    UTLogLevelWarning,
+//    /*!Information level*/
+//    UTLogLevelInfo,
+//    /*!Activity level*/
+//    UTLogLevelActivity
+//} UTLogLevel;
 
 @interface Ubertesters : NSObject <UITextViewDelegate>
 
-@property (nonatomic, readonly) LockScreenViewControllerUberTesters *lockScreen;
-@property (nonatomic, readonly) UserProfileViewController *userProfileScreen;
 @property (nonatomic, retain) NSString* apiKey;
-@property (nonatomic, retain) CustomViewUberTesters *mainView;
 
 @property (nonatomic, assign) BOOL isOpenGL;
-@property (nonatomic, assign) BOOL isInit;
-@property (nonatomic, assign) BOOL isHide;
 @property (nonatomic, assign) BOOL autoUpdate;
-@property (nonatomic, readonly)Boolean inIdle;
 /*!
  *if there is no internet connection user can work in offline mode
  */
-@property (nonatomic) BOOL offlineMode;
 
 @property (nonatomic) BOOL isError;
 
@@ -98,10 +49,6 @@ typedef enum {
  
  Default is LockingModeDisableUbertestersIfBuildNotExist
  */
-@property (nonatomic, assign) LockingMode lockingMode;
-
-//@property (nonatomic, assign) id<UbertestersExtraDataProtocol> crashDelegate;
-@property (nonatomic, assign) id<UbertestersExtraDataProtocol> issueDelegate;
 
 /*!
  *  Main method for accessing Ubertesters singleton.
@@ -166,28 +113,16 @@ typedef enum {
 /*!
  *  Disables Ubertesters crash handler.
  */
+
 - (void)disableCrashHandler;
 
-// public functions for lib's classes
--(void)onceStartIdleTimer;
-- (BOOL)isOnline;
-- (NSString *)getPhoneState;
-- (void)makeAppExit;
-- (void)showLockScreen;
-- (void)postLogs:(NSString*)logs token:(NSString *)token;
-- (void)postCrash:(NSString*)log token:(NSString *)token state:(NSString *)state rid: (NSString *)rid uid: (NSString *)uid;
-- (void)makeUTLibWindowKeyAndVisible;
-- (UIWindow *)getUTLibWindow;
-- (void)playSystemSound:(int)soundID;
-- (void)enableTimer:(BOOL)res;
-- (void)createURbanFolderInDocumentsFolder;
+/*!
+ *  Disables Ubertesters crash handler.
+ */
+
+- (void) setIssueDelegate:(id)delegate;
+
 // For Xamarin
 - (void)sendCrash:(NSString*)crashDescription;
 
-- (void)postFakeCrash;
-
 @end
-
-/*!Install Urban HandleEception to the app and uber menu*/
-//void installUberErrorHandler(void);
-
